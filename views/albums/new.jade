@@ -1,0 +1,38 @@
+extends ../layout
+
+block content
+  h1 New Album
+  fieldset
+    legend Create Album 
+    form(action="/albums/:id/new", method="post")
+      div.artist
+        label(for="artist") Artist 
+        p
+          input(type = 'text', placeholder = 'Artist Name', id="artist", name = "artist")
+      div.name  
+        label(for="album") Album 
+        p 
+          input(type = 'text', placeholder = 'Album Name', id="album", name = "album")
+      div.genre  
+        label(for="genre") Genre 
+        p
+          select(id = 'genre', name="genre")
+            option(value="jazz") Jazz
+            option(value="pop") Pop
+            option(value="rock") Rock
+            option(value="classical") Classical
+      div.rating 
+        p
+          label(for="rating") Stars 
+          input(type='radio' id='rating', name="rating" value='1')
+          input(type='radio' id='rating', name="rating" value='2')
+          input(type='radio' id='rating', name="rating" value='3')
+          input(type='radio' id='rating', name="rating" value='4')
+          input(type='radio' id='rating', name="rating" value='5')
+      div.explicit
+        p
+          input(type="checkbox", id="explicit", name="explicit")
+          label(for="explicit") Contains Explicit Lyrics     
+      div.update  
+        button(type="submit" , id="update")  Create Album 
+        a(href="/albums/") Cancel

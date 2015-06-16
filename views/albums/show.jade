@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  h1= theAlbum.name
+  h2 Genre: 
+    =theAlbum.genre
+  h2 Artist: 
+    =theAlbum.artist
+  form(method='post' action='/albums/' + theAlbum._id + '/delete')
+    div.delete
+      button(type="submit" value='delete' id='delete') Delete
+      a(href="/albums/" + theAlbum._id + '/edit') Edit
