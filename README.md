@@ -145,6 +145,24 @@ You should see something like:
 { "_id" : ObjectId("557fa29d474db8b4594bbcee"), "name" : "Hello" }
 ```
 
+---
+
+### STOP - Create a sequence diagram
+
+Describe what's happening.  Start with:
+
+```
+participant Browser
+participant Express
+participant Mongo
+
+# put your code here
+```
+
+Paste your image here.
+
+---
+
 ### Showing all albums on the index page
 
 Update the index route to pull all records from the database:
