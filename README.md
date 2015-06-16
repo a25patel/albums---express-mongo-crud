@@ -1,12 +1,16 @@
 # CRUD with Express/Mongo
 
-Name your fields (that is, set the `name` attribute to):
+## Setup
 
-- album_genre
-- album_artist
-- album_name
+```
+npm install
+```
 
-NOTE: be sure to add `node_modules` to .gitignore.
+Run the app with:
+
+```
+nodemon
+```
 
 ## Instructions
 
@@ -31,7 +35,7 @@ app.use('/', albums);
 
 Write the albums index route:
 
-```
+```js
 var express = require('express');
 var router = express.Router();
 
@@ -109,14 +113,14 @@ npm install monk --save
 
 In `routes/albums.js` establish a connection to the database:
 
-```
+```js
 var db = require('monk')('localhost/album-demo');
 var albumCollection = db.get('albums');
 ```
 
 Then in your create route, insert the data:
 
-```
+```js
 router.post('/albums', function(req, res, next) {
   albumCollection.insert({ name: req.body.album_name });
   res.redirect('/albums');
@@ -145,7 +149,7 @@ You should see something like:
 
 Update the index route to pull all records from the database:
 
-```
+```js
 router.get('/albums', function(req, res, next) {
   albumCollection.find({}, function (err, records) {
     res.render('albums/index', {allAlbums: records});
@@ -188,7 +192,7 @@ Add a link to the show page:
 
 Add the show page route:
 
-```
+```js
 router.get('/albums/:id', function(req, res, next) {
   albumCollection.findOne({_id: req.params.id}, function (err, record) {
     res.render('albums/show', {theAlbum: record});
