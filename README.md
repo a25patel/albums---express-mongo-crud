@@ -251,6 +251,25 @@ You can put _almost_ all of this together yourself:
 
 The hardest part will be getting the select field to be preselected.  [This answer](http://stackoverflow.com/a/10368381/4229462) should help with that.
 
+---
+
+### BUT STOP - Create a sequence diagram _first_
+
+Draw a sequence diagram of what the update action will be.  Include the redirect to the show page.
+
+```
+participant Browser
+participant Express
+participant Mongo
+
+# put your code here
+```
+
+Paste your image here.
+
+---
+
+
 ### And finally, delete
 
 Delete's a little tricky.  You need to add a form to the show page that will post to `/albums/:id/delete`.
