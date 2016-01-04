@@ -10,9 +10,10 @@ block content
         th Artist
         th Name
     tbody
-      for album in allAlbums
-        tr
-          td= album.genre
-          td= album.artist
-          td
-            a(href='/albums/' + album._id)= album.name
+      if  allAlbums
+        for album in allAlbums
+          tr
+            td= album.genre
+            td= album.artist
+            td
+              a(href='/albums/' + album._id)= album.name
