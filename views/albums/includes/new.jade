@@ -1,0 +1,34 @@
+div.artist
+  label(for="artist") Artist 
+  p
+    input(type = 'text', value= (theAlbum ? theAlbum.artist : 'Enter album artist'), id="artist", name = "artist")
+div.name  
+  label(for="album") Album 
+  p 
+    input(type = 'text', value=(theAlbum ? theAlbum.name : "Enter an album name" ), id="album", name = "album")
+div.genre  
+  label(for="genre") Genre 
+  p
+    select(id = 'genre', name="genre", default =(theAlbum ? theAlbum.genre : "Enter genre"))
+      option(value="jazz") Jazz
+      option(value="pop") Pop
+      option(value="rock") Rock
+      option(value="classical") Classical
+div.rating 
+  p
+    label(for="rating") Stars 
+    input(type='radio' id='rating', name="rating" value='1')
+    input(type='radio' id='rating', name="rating" value='2')
+    input(type='radio' id='rating', name="rating" value='3', checked)
+    input(type='radio' id='rating', name="rating" value='4')
+    input(type='radio' id='rating', name="rating" value='5')
+
+
+div.explicit
+  p
+    input(type="checkbox", id="explicit", name="explicit")
+    label(for="explicit") Contains Explicit Lyrics 
+  
+div.update  
+  button(type="submit" , id="update")  Submit 
+  a(href="/albums/" ) Cancel

@@ -8,11 +8,6 @@ router.get('/albums/new', function(req, res, next) {
   res.render('albums/new');
 });
 
-router.post('/albums', function(req, res, next) {
-  albumCollection.insert({ name: req.body.album_name });
-  res.redirect('/albums');
-});
-
 router.get('/albums', function(req, res, next) {
   albumCollection.find({}, function (err, records) {
     res.render('albums/index', {allAlbums: records});
@@ -43,7 +38,7 @@ router.post('/albums/:id/update', function(req, res, next) {
   res.redirect('/albums/')
 });
 
-router.post('/albums/:id/new' , function(req,res,next){
+router.post('/albums' , function(req,res,next){
   albumCollection.insert({
     name: req.body.album,
     artist: req.body.artist,

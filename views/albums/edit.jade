@@ -5,37 +5,4 @@ block content
   fieldset
     legend Edit Album 
     form(method="post" action="/albums/" + theAlbum._id + '/update')
-      div.artist
-        label(for="artist") Artist 
-        p
-          input(type = 'text', value= theAlbum.artist, id="artist", name = "artist")
-      div.name  
-        label(for="album") Album 
-        p 
-          input(type = 'text', value = theAlbum.name, id="album", name = "album")
-      div.genre  
-        label(for="genre") Genre 
-        p
-          select(id = 'genre', name="genre")
-            option(value="jazz" selected = theAlbum.genre === 'jazz') Jazz
-            option(value="pop" selected = theAlbum.genre === 'pop') Pop
-            option(value="rock" selected = theAlbum.genre === 'rock') Rock
-            option(value="classical" selected = theAlbum.genre === 'classical') Classical
-      div.rating 
-        p
-          label(for="rating") Stars 
-          input(type='radio' id='rating', name="rating" value='1', checked = theAlbum.rating === '1')
-          input(type='radio' id='rating', name="rating" value='2', checked = theAlbum.rating === '2')
-          input(type='radio' id='rating', name="rating" value='3', checked = theAlbum.rating === '3')
-          input(type='radio' id='rating', name="rating" value='4', checked = theAlbum.rating === '4')
-          input(type='radio' id='rating', name="rating" value='5', checked = theAlbum.rating === '5')
-
-
-      div.explicit
-        p
-          input(type="checkbox", id="explicit", name="explicit", checked = theAlbum.explicit === 'on')
-          label(for="explicit") Contains Explicit Lyrics 
-        
-      div.update  
-        button(type="submit" , id="update")  Submit 
-        a(href="/albums/" ) Cancel
+      include includes/form 
