@@ -1,7 +1,6 @@
 We'll talk to Mongo using Monk: https://github.com/Automattic/monk
 
 ### STOP - Create a sequence diagram
-
   browser -> express: GET Album
   express -> browser: Render Album Index
   browser -> express : GET new albums
